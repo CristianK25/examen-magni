@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+sqlmodel
+pydantic-settings
+PyJWT
+passlib[bcrypt]
+python-multipart
