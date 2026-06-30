@@ -1,0 +1,142 @@
+[
+  {
+    "codigo": "VER001",
+    "nombre": "Papa",
+    "precioCompra": 600,
+    "precioVenta": 950,
+    "stockActual": 120
+  },
+  {
+    "codigo": "VER002",
+    "nombre": "Cebolla",
+    "precioCompra": 700,
+    "precioVenta": 1100,
+    "stockActual": 90
+  },
+  {
+    "codigo": "VER003",
+    "nombre": "Tomate",
+    "precioCompra": 1200,
+    "precioVenta": 1800,
+    "stockActual": 80
+  },
+  {
+    "codigo": "VER004",
+    "nombre": "Lechuga",
+    "precioCompra": 500,
+    "precioVenta": 900,
+    "stockActual": 40
+  },
+  {
+    "codigo": "VER005",
+    "nombre": "Zanahoria",
+    "precioCompra": 800,
+    "precioVenta": 1300,
+    "stockActual": 70
+  },
+  {
+    "codigo": "VER006",
+    "nombre": "Zapallo",
+    "precioCompra": 650,
+    "precioVenta": 1000,
+    "stockActual": 60
+  },
+  {
+    "codigo": "VER007",
+    "nombre": "Batata",
+    "precioCompra": 900,
+    "precioVenta": 1400,
+    "stockActual": 50
+  },
+  {
+    "codigo": "VER008",
+    "nombre": "Pimiento Rojo",
+    "precioCompra": 1800,
+    "precioVenta": 2600,
+    "stockActual": 35
+  },
+  {
+    "codigo": "VER009",
+    "nombre": "Berenjena",
+    "precioCompra": 1300,
+    "precioVenta": 1900,
+    "stockActual": 30
+  },
+  {
+    "codigo": "VER010",
+    "nombre": "Ajo",
+    "precioCompra": 2500,
+    "precioVenta": 3500,
+    "stockActual": 20
+  },
+  {
+    "codigo": "FRU001",
+    "nombre": "Manzana Roja",
+    "precioCompra": 1400,
+    "precioVenta": 2200,
+    "stockActual": 100
+  },
+  {
+    "codigo": "FRU002",
+    "nombre": "Banana",
+    "precioCompra": 1100,
+    "precioVenta": 1700,
+    "stockActual": 120
+  },
+  {
+    "codigo": "FRU003",
+    "nombre": "Naranja",
+    "precioCompra": 900,
+    "precioVenta": 1500,
+    "stockActual": 110
+  },
+  {
+    "codigo": "FRU004",
+    "nombre": "Mandarina",
+    "precioCompra": 850,
+    "precioVenta": 1400,
+    "stockActual": 95
+  },
+  {
+    "codigo": "FRU005",
+    "nombre": "Pera",
+    "precioCompra": 1300,
+    "precioVenta": 2000,
+    "stockActual": 75
+  },
+  {
+    "codigo": "FRU006",
+    "nombre": "Durazno",
+    "precioCompra": 1700,
+    "precioVenta": 2600,
+    "stockActual": 45
+  },
+  {
+    "codigo": "FRU007",
+    "nombre": "Uva",
+    "precioCompra": 2200,
+    "precioVenta": 3200,
+    "stockActual": 40
+  },
+  {
+    "codigo": "FRU008",
+    "nombre": "Kiwi",
+    "precioCompra": 2800,
+    "precioVenta": 4000,
+    "stockActual": 25
+  },
+  {
+    "codigo": "FRU009",
+    "nombre": "Melón",
+    "precioCompra": 1000,
+    "precioVenta": 1600,
+    "stockActual": 55
+  },
+  {
+    "codigo": "FRU010",
+    "nombre": "Sandía",
+    "precioCompra": 700,
+    "precioVenta": 1200,
+    "stockActual": 150
+  }
+]
