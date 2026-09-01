@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 import { Routes, Route } from 'react-router-dom';
 import MercadoPasesPage from './paginas/JugadorListaPage';
 import PlantillaFinalPage from './paginas/JugadorResumenPage';

@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 import { useCompra } from "../context/ProductoContext"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';

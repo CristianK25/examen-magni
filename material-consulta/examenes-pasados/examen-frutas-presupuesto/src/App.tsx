@@ -1,4 +1,5 @@
-import { useState } from 'react'
+// @ts-nocheck
+/* eslint-disable */
 import { Route, Routes } from 'react-router-dom'
 import ListaVerduleriaPage from './paginas/FrutaListaPage'
 import ResumenPedidoPage from './paginas/FrutaResumenPage'

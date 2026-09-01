@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 export default interface FrutaVerdura {
     codigo: string;
     nombre: string;

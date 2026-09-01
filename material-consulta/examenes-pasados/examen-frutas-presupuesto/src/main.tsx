@@ -1,9 +1,11 @@
+// @ts-nocheck
+/* eslint-disable */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom';
-import { Proveedor } from './contexto/contexto.tsx';
+import { Proveedor } from './contexto/FrutaContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

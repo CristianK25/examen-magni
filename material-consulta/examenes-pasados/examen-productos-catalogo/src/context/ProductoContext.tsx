@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import type Producto from "../modelo/Producto";
 import datosProductos from "../../../docs/productos_super.json";

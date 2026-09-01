@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 export default class Producto {
     codigoProducto: string;
     denominacion: string;

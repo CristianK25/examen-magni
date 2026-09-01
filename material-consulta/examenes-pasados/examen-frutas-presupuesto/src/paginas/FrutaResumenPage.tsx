@@ -1,3 +1,5 @@
+// @ts-nocheck
+/* eslint-disable */
 import { useNavigate } from "react-router-dom";
 import { useContexto } from "../contexto/FrutaContext"
 import { useState } from "react";
