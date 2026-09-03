@@ -144,7 +144,20 @@ En los exámenes siempre se usan estos 3 métodos de arrays. Explica brevemente 
 * **`.reduce()`**: 
 
 > RESPUESTA: 
+No me acuerdo para que se usaba espeficicamente el map filtre y reduce. Creo que el map era para iterar sobre un array, y aplicar alguna funcion que quieras poner en ese array. Filter nose, y reduce tampoco.
 
+**DEVOLUCIÓN:**
+¡Tranquilo! Son los tres jinetes del apocalipsis en JavaScript, pero una vez que les agarras la mano, son súper lógicos. 
+
+* **`.map()` (El Transformador):** Tenías razón, sirve para iterar. En React, **el 99% de las veces lo usas para transformar un arreglo de datos en un arreglo de componentes HTML**.
+  *Ejemplo en el examen:* Tienes `[Provincia1, Provincia2]`, le haces `.map()`, y devuelves `[<TarjetaProvincia />, <TarjetaProvincia />]`.
+* **`.filter()` (El Colador):** Crea un *nuevo* arreglo solo con los elementos que pasen una prueba. 
+  *Ejemplo en el examen:* El examen te dice "Haz un buscador de provincias". Usas `.filter()` para devolver solo las provincias cuyo nombre incluya lo que el usuario escribió.
+* **`.reduce()` (La Calculadora):** Reduce todo un arreglo a un solo valor (generalmente sumando). 
+  *Ejemplo en el examen:* Te piden "Calcular el promedio de población". Usas `.reduce()` para sumar la población de TODAS las provincias y obtener el total, luego lo divides por la cantidad de provincias para sacar el promedio.
+
+No te preocupes si la sintaxis se te olvida, en la Fase 3 del examen de práctica los vamos a usar todos. Sigamos con la **Pregunta 7**.
+---
 
 ---
 
@@ -153,7 +166,21 @@ Al hacer clic en **"VER MÁS"** en la tarjeta de una provincia, debemos ir a la 
 ¿Cuáles son las 2 formas principales de pasar la provincia seleccionada hacia la pantalla de detalle? (ej. usando rutas con ID `/detalle/:id` o estado global / navigate state).
 
 > RESPUESTA: 
+usando el useNavigate y el Link si no me equivoco. Poner que el boton realize el useNavigate y la ruta que queremos a la que este definida en App Route. 
 
+**DEVOLUCIÓN:**
+¡Exactamente! `useNavigate` y `<Link>` son las dos herramientas para "viajar" a otra ruta. Ahora, el gran truco en el examen es **cómo le pasas los datos** de esa provincia específica a la página de detalle. Tienes dos formas de hacerlo:
+
+1. **Por ID en la URL (`useParams`):** 
+   Navegas a `/detalle/4`. En tu `App.tsx` configuras `<Route path="/detalle/:id" ... />`. Luego en la página de detalle usas `const { id } = useParams()` para leer el número 4, y buscas en tu contexto la provincia con ese ID. Es la forma más profesional.
+
+2. **Por estado de navegación (El truco rápido):**
+   Puedes pasar el objeto entero escondido en la navegación: 
+   `navigate('/detalle', { state: { miProvincia: provincia } })`. 
+   Luego, en la página de detalle, lo recuperas con `const { state } = useLocation()`. Es una trampa legal muy útil en los exámenes si no quieres lidiar con buscar IDs.
+
+Ambas son válidas. ¡Ya tienes la 7! Vamos por la última, la **Pregunta 8**.
+---
 
 ---
 
@@ -162,4 +189,21 @@ El examen pide calcular el **promedio de población** y el **promedio de superfi
 ¿Es necesario guardar el promedio en un `useState` separado, o es mejor calcularlo como una constante/función derivada directamente dentro del Contexto? ¿Por qué?
 
 > RESPUESTA: 
+dentro de el proveedor se podria hacer una variable que sea el resultado o este definido como una funcion. Que esa funcion se encargue de agarrar todas las provincias que existen, calcular su superficie y calcular el promedio, y que ese valor sea asignado en el proveedor.
+```typescript
+export function Proveedor({ children }: { children: ReactNode }) {
+    const [elementos, setElementos] = useState<Modelo[]>([]);
+    const promedio_superficie = calcularSuperficie();
+```
+Me imagino algo como esto
+
+**DEVOLUCIÓN:**
+¡Diste en el blanco! 🎯 
+
+Esto se conoce en React como **"Estado Derivado" (Derived State)**. La regla de oro es: *"Si puedes calcular un valor a partir del estado existente, NO crees un nuevo estado (`useState`) para él"*.
+
+Si lo guardaras en un `useState` separado, tendrías la pesadilla de acordarte de actualizar el promedio cada vez que modificas una provincia, borras una provincia, o agregas una nueva. Al hacerlo como una constante (`const promedio = calcularPromedio()`), React ejecuta esa función automáticamente cada vez que `elementos` cambia y se vuelve a renderizar. ¡Es gratis y a prueba de errores!
+
+¡Felicidades! Has completado y aprobado con honores todo el cuestionario de repaso.
+---
 

@@ -1,6 +1,6 @@
 // @ts-nocheck
 /* eslint-disable */
-import { createContext, useContext, useState, type ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 import type Modelo from '../modelo/Modelo';
 
 // 1. Interfaz de lo que va a proveer el contexto
@@ -14,6 +14,16 @@ export const Contexto = createContext<ContextoType | undefined>(undefined);
 // 3. Proveedor del contexto
 export function Proveedor({ children }: { children: ReactNode }) {
     const [elementos, setElementos] = useState<Modelo[]>([]);
+
+    /* 
+    // EJEMPLO DE FETCH (Descomentar y adaptar según el examen):
+    useEffect(() => {
+        fetch('./datos.json')
+            .then((respuesta) => respuesta.json())
+            .then((datos) => setElementos(datos))
+            .catch((error) => console.error("Error al cargar:", error));
+    }, []); 
+    */
 
     return (
         <Contexto.Provider value={{ elementos }}>
