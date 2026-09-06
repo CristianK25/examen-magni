@@ -1,15 +1,13 @@
 import { useContexto } from '../contexto/context';
 import { useNavigate } from 'react-router-dom';
-import ProvinciasArgentinas from '../componentes/provincias_argentinas';
 
-
-export default function PaginaBase() {
+export default function PaginaDetalle() {
     const { elementos } = useContexto();
     const navigate = useNavigate();
 
     return (
         <div className="p-4">
-            <ProvinciasArgentinas />
+            <h1 className="text-xl font-bold">Página Final</h1>
         </div>
     );
 }

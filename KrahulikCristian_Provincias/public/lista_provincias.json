@@ -1,0 +1,208 @@
+[{
+	"provincia": "Buenos Aires",
+	"abreviatura": "BA",
+	"capital": "La Plata",
+	"bandera": "assets/img/bsas.png",
+	"fechaAutonomia": "1820-11-01",
+	"poblacion": 15625084,
+	"superficie": 307571,
+	"nroDepartamentos": "135"
+}, {
+	"provincia": "Catamarca",
+	"abreviatura": "CA",
+	"capital": "San Fernando del Valle de Catamarca",
+	"bandera": "assets/img/catamarca.png",
+	"fechaAutonomia": "1821-11-01",
+	"poblacion": 367828,
+	"superficie": 102602,
+	"nroDepartamentos": "16"
+}, {
+	"provincia": "Chaco",
+	"abreviatura": "CH",
+	"capital": "Resistencia",
+	"bandera": "assets/img/chaco.png",
+	"fechaAutonomia": "1955-11-01",
+	"poblacion": 1455259,
+	"superficie": 99633,
+	"nroDepartamentos": "25"
+}, {
+	"provincia": "Chubut",
+	"abreviatura": "CT",
+	"capital": "Rawson",
+	"bandera": "assets/img/chubut.png",
+	"fechaAutonomia": "1955-11-01",
+	"poblacion": 509108,
+	"superficie": 224686,
+	"nroDepartamentos": "15"
+}, {
+	"provincia": "Córdoba",
+	"abreviatura": "CB",
+	"capital": "Córdoba",
+	"bandera": "assets/img/cordoba.png",
+	"fechaAutonomia": "1955-11-01",
+	"poblacion": 3308876,
+	"superficie": 165321,
+	"nroDepartamentos": "26"
+}, {
+	"provincia": "Corrientes",
+	"abreviatura": "CR",
+	"capital": "Corrientes",
+	"bandera": "assets/img/corrientes.png",
+	"fechaAutonomia": "1814-11-01",
+	"poblacion": 930911,
+	"superficie": 88199,
+	"nroDepartamentos": "25"
+}, {
+	"provincia": "Entre Rios",
+	"abreviatura": "ER",
+	"capital": "Paraná",
+	"bandera": "assets/img/entrerios.png",
+	"fechaAutonomia": "1814-11-01",
+	"poblacion": 1235994,
+	"superficie": 78781,
+	"nroDepartamentos": "17"
+}, {
+	"provincia": "Formosa",
+	"abreviatura": "FO",
+	"capital": "Formosa",
+	"bandera": "assets/img/formosa.png",
+	"fechaAutonomia": "1814-11-01",
+	"poblacion": 530162,
+	"superficie": 72066,
+	"nroDepartamentos": "9"
+}, {
+	"provincia": "Jujuy",
+	"abreviatura": "JY",
+	"capital": "San Salvador de Jujuy",
+	"bandera": "assets/img/jujuy.png",
+	"fechaAutonomia": "1836-11-01",
+	"poblacion": 673307,
+	"superficie": 53219,
+	"nroDepartamentos": "16"
+}, {
+	"provincia": "La Pampa",
+	"abreviatura": "LP",
+	"capital": "Santa Rosa",
+	"bandera": "assets/img/lapampa.png",
+	"fechaAutonomia": "1836-11-01",
+	"poblacion": 318951,
+	"superficie": 143440,
+	"nroDepartamentos": "22"
+}, {
+	"provincia": "La Rioja",
+	"abreviatura": "LR",
+	"capital": "La Rioja",
+	"bandera": "assets/img/larioja.png",
+	"fechaAutonomia": "1836-11-01",
+	"poblacion": 333642,
+	"superficie": 89680,
+	"nroDepartamentos": "18"
+}, {
+	"provincia": "Mendoza",
+	"abreviatura": "MZ",
+	"capital": "Mendoza",
+	"bandera": "assets/img/mendoza.png",
+	"fechaAutonomia": "1836-11-01",
+	"poblacion": 1738929,
+	"superficie": 148827,
+	"nroDepartamentos": "18"
+}, {
+	"provincia": "Misiones",
+	"abreviatura": "MI",
+	"capital": "Posadas",
+	"bandera": "assets/img/misiones.png",
+	"fechaAutonomia": "1820-11-01",
+	"poblacion": 1101593,
+	"superficie": 29801,
+	"nroDepartamentos": "17"
+}, {
+	"provincia": "Neuquén",
+	"abreviatura": "NQ",
+	"capital": "Neuquén",
+	"bandera": "assets/img/neuquen.png",
+	"fechaAutonomia": "1820-11-01",
+	"poblacion": 585126,
+	"superficie": 94078,
+	"nroDepartamentos": "16"
+}, {
+	"provincia": "Rio Negro",
+	"abreviatura": "RN",
+	"capital": "Viedma",
+	"bandera": "assets/img/rionegro.png",
+	"fechaAutonomia": "1820-11-01",
+	"poblacion": 638645,
+	"superficie": 203013,
+	"nroDepartamentos": "13"
+}, {
+	"provincia": "Salta",
+	"abreviatura": "SA",
+	"capital": "Salta",
+	"bandera": "assets/img/salta.png",
+	"fechaAutonomia": "1820-11-01",
+	"poblacion": 1214441,
+	"superficie": 155488,
+	"nroDepartamentos": "23"
+}, {
+	"provincia": "San Juan",
+	"abreviatura": "SJ",
+	"capital": "San Juan",
+	"bandera": "assets/img/sanjuan.png",
+	"fechaAutonomia": "1825-11-01",
+	"poblacion": 681055,
+	"superficie": 89651,
+	"nroDepartamentos": "19"
+}, {
+	"provincia": "San Luis",
+	"abreviatura": "SL",
+	"capital": "San Luis",
+	"bandera": "assets/img/sanluis.png",
+	"fechaAutonomia": "1825-11-01",
+	"poblacion": 432310,
+	"superficie": 76748,
+	"nroDepartamentos": "9"
+}, {
+	"provincia": "Santa Cruz",
+	"abreviatura": "SC",
+	"capital": "Río Gallegos",
+	"bandera": "assets/img/santacruz.png",
+	"fechaAutonomia": "1825-11-01",
+	"poblacion": 273964,
+	"superficie": 243943,
+	"nroDepartamentos": "7"
+}, {
+	"provincia": "Santa Fe",
+	"abreviatura": "SF",
+	"capital": "Santa Fe",
+	"bandera": "assets/img/santafe.png",
+	"fechaAutonomia": "1825-11-01",
+	"poblacion": 3194537,
+	"superficie": 133007,
+	"nroDepartamentos": "19"
+}, {
+	"provincia": "Santiago del Estero",
+	"abreviatura": "SE",
+	"capital": "Santiago del Estero",
+	"bandera": "assets/img/santiago.png",
+	"fechaAutonomia": "1825-11-01",
+	"poblacion": 874006,
+	"superficie": 136351,
+	"nroDepartamentos": "27"
+}, {
+	"provincia": "Tierra del Fuego",
+	"abreviatura": "TF",
+	"capital": "Ushuaia",
+	"bandera": "assets/img/tierra.png",
+	"fechaAutonomia": "1825-11-01",
+	"poblacion": 127205,
+	"superficie": 215716,
+	"nroDepartamentos": "4"
+}, {
+	"provincia": "Tucumán",
+	"abreviatura": "TUC",
+	"capital": "San Miguel de Tucumán",
+	"bandera": "assets/img/tucuman.png",
+	"fechaAutonomia": "1820-11-01",
+	"poblacion": 1448188,
+	"superficie": 22524,
+	"nroDepartamentos": "17"
+}]

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
-import type Modelo from '../modelo/Modelo';
+import type Modelo from '../modelo/Provincia';
 
 // 1. Interfaz de lo que va a proveer el contexto
 export interface ContextoType {
@@ -13,15 +13,16 @@ export const Contexto = createContext<ContextoType | undefined>(undefined);
 export function Proveedor({ children }: { children: ReactNode }) {
     const [elementos, setElementos] = useState<Modelo[]>([]);
 
-    /* 
-    // EJEMPLO DE FETCH (Descomentar y adaptar según el examen):
+    const URL_DATOS = '/lista_provincias.json';
     useEffect(() => {
-        fetch('./datos.json')
+        fetch(URL_DATOS)
             .then((respuesta) => respuesta.json())
-            .then((datos) => setElementos(datos))
+            .then((datos) => {
+                setElementos(datos)
+            })
             .catch((error) => console.error("Error al cargar:", error));
-    }, []); 
-    */
+    }, []);
+
 
     return (
         <Contexto.Provider value={{ elementos }}>
