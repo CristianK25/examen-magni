@@ -1,15 +1,15 @@
-// @ts-nocheck
-/* eslint-disable */
 import { Routes, Route } from 'react-router-dom'
-import PaginaBase from './paginas/PaginaBase'
-import PaginaFinal from './paginas/PaginaFinal'
+import PaginaLista from './paginas/Pagina_superheroes_lista'
+import PaginaDetalle from './paginas/Pagina_heroe_detalle'
+import PaginaComparador from './paginas/Pagina_comparador'
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
       <Routes>
-        <Route path="/" element={<PaginaBase />} />
-        <Route path="/final" element={<PaginaFinal />} />
+        <Route path="/" element={<PaginaLista />} />
+        <Route path="/heroe/:id" element={<PaginaDetalle />} />
+        <Route path="/comparar" element={<PaginaComparador />} />
       </Routes>
     </div>
   )

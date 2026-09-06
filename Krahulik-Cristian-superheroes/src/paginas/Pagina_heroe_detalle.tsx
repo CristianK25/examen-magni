@@ -1,9 +1,9 @@
 // @ts-nocheck
 /* eslint-disable */
-import { useContexto } from '../contexto/context';
+import { useContexto } from '../contexto/heroes_context';
 import { useNavigate } from 'react-router-dom';
 
-export default function PaginaFinal() {
+export default function HeroeDetalle() {
     const { elementos } = useContexto();
     const navigate = useNavigate();
 
