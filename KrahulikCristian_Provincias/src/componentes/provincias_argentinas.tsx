@@ -1,4 +1,4 @@
-import { useContexto } from "../contexto/context"
+import { useContexto } from "../contexto/provincia_context"
 import Provincia from "./provincia";
 
 function ProvinciasArgentinas() {

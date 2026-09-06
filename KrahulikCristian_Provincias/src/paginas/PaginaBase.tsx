@@ -1,4 +1,4 @@
-import { useContexto } from '../contexto/context';
+import { useContexto } from '../contexto/provincia_context';
 import { useNavigate } from 'react-router-dom';
 import ProvinciasArgentinas from '../componentes/provincias_argentinas';
 

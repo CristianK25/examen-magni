@@ -4,6 +4,8 @@ import type Modelo from '../modelo/Provincia';
 // 1. Interfaz de lo que va a proveer el contexto
 export interface ContextoType {
     elementos: Modelo[];
+    promedioPoblacion: number;
+    promedioSuperficie: number;
 }
 
 // 2. Creación del contexto
@@ -23,9 +25,17 @@ export function Proveedor({ children }: { children: ReactNode }) {
             .catch((error) => console.error("Error al cargar:", error));
     }, []);
 
+    const promedioPoblacion = Math.round(
+        elementos.reduce((acum, p) => acum + p.poblacion, 0) / (elementos.length || 1)
+    );
+
+    const promedioSuperficie = Math.round(
+        elementos.reduce((acum, p) => acum + p.superficie, 0) / (elementos.length || 1)
+    );
+
 
     return (
-        <Contexto.Provider value={{ elementos }}>
+        <Contexto.Provider value={{ elementos, promedioPoblacion, promedioSuperficie }}>
             {children}
         </Contexto.Provider>
     );

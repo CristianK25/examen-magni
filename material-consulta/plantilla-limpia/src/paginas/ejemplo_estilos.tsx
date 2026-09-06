@@ -20,6 +20,27 @@ export function EjemplosEstilos() {
 
             {/* 6. VISTA DETALLE EN 2 COLUMNAS */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 border rounded-lg max-w-2xl mx-auto bg-white"></div>
+
+            {/* 7. TÍTULO PRINCIPAL DE PÁGINA (H1) */}
+            <h1 className="text-2xl font-bold text-center mb-6">Título de la Página</h1>
+
+            {/* 9. CONTENEDOR ESTIRADO ANCHO FIJO (Para filas de datos) */}
+            <div className="w-96 grid grid-cols-1 gap-4 mb-6"></div>
+
+            {/* 8. RENGLÓN CLAVE-VALOR SEPARADO (Izquierda / Derecha) */}
+            <p className="flex justify-between border-b py-1">
+                <span className="font-semibold">Etiqueta:</span>
+                <span>Valor</span>
+            </p>
+
+            {/* 10. IMAGEN EN CONTENEDOR (Estirada cubriendo el recuadro) */}
+            <div className="flex items-center justify-center h-64 w-full bg-gray-100 rounded overflow-hidden">
+                <img src="/assets/img/ejemplo.png" alt="ejemplo" className="w-full h-full object-cover" />
+            </div>
+
+            {/* 11. IMAGEN CON TAMAÑO FIJO Y SOMBRA (Alternativa directa) */}
+            <img src="/assets/img/ejemplo.png" alt="ejemplo" className="w-48 h-32 object-cover rounded shadow my-2" />
+
         </div>
     );
 }

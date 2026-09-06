@@ -7,7 +7,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
       <Routes>
         <Route path="/" element={<PaginaBase />} />
-        <Route path="/final" element={<PaginaDetalle />} />
+        <Route path="/detalle/:nombre" element={<PaginaDetalle />} />
       </Routes>
     </div>
   )
