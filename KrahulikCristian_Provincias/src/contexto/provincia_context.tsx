@@ -6,6 +6,7 @@ export interface ContextoType {
     elementos: Modelo[];
     promedioPoblacion: number;
     promedioSuperficie: number;
+    filtrarPorSuperficie: (superficie: number) => void;
 }
 
 // 2. Creación del contexto
@@ -13,6 +14,7 @@ export const Contexto = createContext<ContextoType | undefined>(undefined);
 
 // 3. Proveedor del contexto
 export function Proveedor({ children }: { children: ReactNode }) {
+    const [elementosPrincipales, setElementosPrincipales] = useState<Modelo[]>([]);
     const [elementos, setElementos] = useState<Modelo[]>([]);
 
     const URL_DATOS = '/lista_provincias.json';
@@ -20,22 +22,46 @@ export function Proveedor({ children }: { children: ReactNode }) {
         fetch(URL_DATOS)
             .then((respuesta) => respuesta.json())
             .then((datos) => {
-                setElementos(datos)
+                setElementosPrincipales(datos);
+                setElementos([...datos]);
             })
             .catch((error) => console.error("Error al cargar:", error));
     }, []);
 
-    const promedioPoblacion = Math.round(
-        elementos.reduce((acum, p) => acum + p.poblacion, 0) / (elementos.length || 1)
-    );
+    /**Promedio poblacion */
+    let sumaPoblacion = 0;
 
-    const promedioSuperficie = Math.round(
-        elementos.reduce((acum, p) => acum + p.superficie, 0) / (elementos.length || 1)
-    );
+    for (const p of elementosPrincipales) {
+        sumaPoblacion += p.poblacion;
+    }
 
+    const promedioPoblacion = elementosPrincipales.length
+        ? Math.round(sumaPoblacion / elementosPrincipales.length)
+        : 0;
+
+    /**Promedio Superficie */
+    let sumaSuperficie = 0;
+
+    for (const s of elementosPrincipales) {
+        sumaSuperficie += s.superficie
+    }
+
+    const promedioSuperficie = elementosPrincipales.length
+        ? Math.round(sumaSuperficie / elementosPrincipales.length)
+        : 0;
+
+    const filtrarPorSuperficie = function (superficieIngresada) {
+        let listaFiltrada = []
+        for (const p of elementosPrincipales) {
+            if (p.superficie >= superficieIngresada) {
+                listaFiltrada.push(p)
+            }
+        }
+        setElementos(listaFiltrada)
+    }
 
     return (
-        <Contexto.Provider value={{ elementos, promedioPoblacion, promedioSuperficie }}>
+        <Contexto.Provider value={{ elementos, promedioPoblacion, promedioSuperficie, filtrarPorSuperficie }}>
             {children}
         </Contexto.Provider>
     );
