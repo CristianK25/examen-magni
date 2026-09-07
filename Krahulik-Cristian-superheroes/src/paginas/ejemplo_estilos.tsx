@@ -41,6 +41,27 @@ export function EjemplosEstilos() {
             {/* 11. IMAGEN CON TAMAÑO FIJO Y SOMBRA (Alternativa directa) */}
             <img src="/assets/img/ejemplo.png" alt="ejemplo" className="w-48 h-32 object-cover rounded shadow my-2" />
 
+            {/* 12. BOTÓN COMPACTO PEQUEÑO (Ancho ajustado al texto) */}
+            <button className="bg-gray-700 text-white px-2.5 py-1 text-xs rounded hover:bg-gray-800 font-medium w-fit">Botón Pequeño</button>
+
+            {/* 13. BARRA SUPERIOR NAV / HEADER CON FLEXBOX (En una sola línea) */}
+            <div className="flex flex-wrap items-center justify-between gap-3 p-4 bg-gray-50 border rounded shadow-sm w-full"></div>
+
+            {/* 14. SELECT / DESPLEGABLE ESTILIZADO SIMPLE (Directo sin cambiar estructura) */}
+            <select className="border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white cursor-pointer">
+                <option value="">Seleccione una opción...</option>
+            </select>
+
+            {/* 15. OPCIONAL: CAMPO AGRUPADO VERTICAL (Label arriba de Input/Select) */}
+            <div className="flex flex-col gap-1">
+                <label className="font-semibold text-gray-700">Etiqueta</label>
+                <select className="border border-gray-300 rounded px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white cursor-pointer w-full">
+                    <option value="">Opción</option>
+                </select>
+            </div>
+
+            {/* 16. OPCIONAL: ELEMENTO QUE OCUPA 2 COLUMNAS EN GRILLA (Boton o div a lo ancho) */}
+            <div className="md:col-span-2"></div>
         </div>
     );
 }

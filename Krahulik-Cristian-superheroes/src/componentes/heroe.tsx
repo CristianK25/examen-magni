@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import type Modelo from '../modelo/heroe'
 
 interface HeroeProp {
@@ -5,6 +6,7 @@ interface HeroeProp {
 }
 
 function Heroe({ heroe }: HeroeProp) {
+    const navegarHacia = useNavigate()
 
     return (
         <div className="border rounded-lg p-4 shadow-md flex flex-col items-center text-center bg-white">
@@ -13,10 +15,11 @@ function Heroe({ heroe }: HeroeProp) {
             <p>Editorial:   {heroe.editorial}</p>
             <p>Nivel de poder:    {heroe.nivelPoder}</p>
             <button
+                onClick={() => navegarHacia(`/heroes/${heroe.id}`)}
                 className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-medium">
                 Ver Detalle
             </button>
-        </div>
+        </div >
     )
 }
 export default Heroe

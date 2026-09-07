@@ -7,6 +7,8 @@ import type Modelo from '../modelo/heroe';
 export interface ContextoType {
     elementos: Modelo[];
     elementosFiltrados: Modelo[];
+    filtrarPorNivelPoder: (nivel: number) => void;
+    filtrarPorEditorial: (editorial: string) => void
 }
 
 // 2. Creación del contexto
@@ -18,7 +20,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
     const [elementosFiltrados, setElementosFiltrados] = useState<Modelo[]>([]);
 
     useEffect(() => {
-        fetch('./heroes.json')
+        fetch('/heroes.json')
             .then((respuesta) => respuesta.json())
             .then((datos) => {
                 setElementos(datos);
@@ -27,9 +29,33 @@ export function Proveedor({ children }: { children: ReactNode }) {
             .catch((error) => console.error("Error al cargar:", error));
     }, []);
 
+    const filtrarPorNivelPoder = function (nivelPoderSeleccionado) {
+        let lista = []
+        for (const i of elementos) {
+            if (i.nivelPoder >= nivelPoderSeleccionado) {
+                lista.push(i)
+            }
+        }
+        setElementosFiltrados(lista)
+    }
+
+    const filtrarPorEditorial = function (editorial: string) {
+        if (editorial != "Todas") {
+            let lista = []
+            for (const h of elementos) {
+                if (h.editorial === editorial) {
+                    lista.push(h)
+                }
+            }
+            setElementosFiltrados(lista)
+        }
+        else {
+            setElementosFiltrados(elementos)
+        }
+    }
 
     return (
-        <Contexto.Provider value={{ elementos }}>
+        <Contexto.Provider value={{ elementos, elementosFiltrados, filtrarPorNivelPoder, filtrarPorEditorial }}>
             {children}
         </Contexto.Provider>
     );

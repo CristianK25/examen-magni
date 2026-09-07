@@ -4,7 +4,6 @@ import ProvinciaDetalle from '../componentes/provincia_detalle';
 
 export default function PaginaDetalle() {
     const { elementos } = useContexto();
-    const navigate = useNavigate();
     const { nombre } = useParams();
 
     const provinciaSeleccionada = elementos.find(

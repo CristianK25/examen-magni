@@ -8,7 +8,7 @@ function App() {
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
       <Routes>
         <Route path="/" element={<PaginaLista />} />
-        <Route path="/heroe/:id" element={<PaginaDetalle />} />
+        <Route path="/heroes/:idHeroe" element={<PaginaDetalle />} />
         <Route path="/comparar" element={<PaginaComparador />} />
       </Routes>
     </div>

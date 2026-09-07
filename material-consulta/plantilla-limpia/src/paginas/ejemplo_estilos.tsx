@@ -41,6 +41,11 @@ export function EjemplosEstilos() {
             {/* 11. IMAGEN CON TAMAÑO FIJO Y SOMBRA (Alternativa directa) */}
             <img src="/assets/img/ejemplo.png" alt="ejemplo" className="w-48 h-32 object-cover rounded shadow my-2" />
 
+            {/* 12. BOTÓN COMPACTO PEQUEÑO (Ancho ajustado al texto) */}
+            <button className="bg-gray-700 text-white px-2.5 py-1 text-xs rounded hover:bg-gray-800 font-medium w-fit">Botón Pequeño</button>
+
+            {/* 13. BARRA SUPERIOR NAV / HEADER CON FLEXBOX (En una sola línea) */}
+            <div className="flex flex-wrap items-center justify-between gap-3 p-4 bg-gray-50 border rounded shadow-sm w-full"></div>
         </div>
     );
 }
