@@ -14,7 +14,7 @@ export const Contexto = createContext<ContextoType | undefined>(undefined);
 // 3. Proveedor del contexto
 export function Proveedor({ children }: { children: ReactNode }) {
     const [elementos, setElementos] = useState<Modelo[]>([]);
-
+    const [elementosFiltrados, setElementosFiltrados] = useState<Modelo[]>([]);
     /* 
     // EJEMPLO DE FETCH (Descomentar y adaptar según el examen):
     useEffect(() => {
