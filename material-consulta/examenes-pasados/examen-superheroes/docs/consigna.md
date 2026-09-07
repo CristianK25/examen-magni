@@ -147,9 +147,34 @@ Al presionar **[ ENFRENTAR ]**:
 
 ---
 
-### 8. Enrutamiento (`App.tsx`)
+### 8. Componente / Página `superheroes_tabla.tsx` (Vista Alternativa en Tabla)
+
+Para practicar formas alternativas de presentación de datos en exámenes, se solicita agregar la posibilidad de ver los superhéroes en una **Tabla HTML**:
+
+```text
++---------------------------------------------------------------------------------------------------------------+
+| ID  | Foto   | Nombre       | Editorial | Año Creación | Poder  | Poderes                 | Acciones      |
++-----+--------+--------------+-----------+--------------+--------+-------------------------+---------------+
+| 1   | [Foto] | Spider-Man   | Marvel    | 1962         | 70 pts | Agilidad, Sentido...    | [ VER DETALLE]|
+| 2   | [Foto] | Superman     | DC        | 1938         | 95 pts | Superfuerza, Vuelo...   | [ VER DETALLE]|
++---------------------------------------------------------------------------------------------------------------+
+```
+
+#### Modalidades de Implementación (Practicar ambas):
+1. **Opción A (Navegación por Ruta - `/tabla`):**
+   * Crear la página `superheroes_tabla.tsx` asociada a la ruta `/tabla` en `App.tsx`.
+   * En `busqueda.tsx` agregar el botón **`[ 📊 Vista Tabla ]`** / **`[ 🎴 Vista Tarjetas ]`** para navegar entre `/` y `/tabla`.
+2. **Opción B (Toggle Dinámico en la misma página):**
+   * En `superheroes_lista.tsx`, manejar un estado local `const [modoTabla, setModoTabla] = useState(false);`.
+   * Agregar botones de alternancia arriba para cambiar condicionalmente entre renderizar la grilla de `<Heroe />` o la `<table>` de HTML dentro de la misma vista.
+
+---
+
+### 9. Enrutamiento (`App.tsx`)
 
 Configurar las siguientes rutas con `react-router-dom`:
-* `/` -> Página Principal (Buscador + Lista de Superhéroes)
+* `/` -> Página Principal (Buscador + Lista de Superhéroes en Tarjetas)
+* `/tabla` -> Vista Alternativa de Superhéroes en Tabla HTML
 * `/heroe/:id` -> Página de Detalle del Superhéroe
 * `/comparar` -> Página de Comparación / Batalla
+

@@ -46,6 +46,52 @@ export function EjemplosEstilos() {
 
             {/* 13. BARRA SUPERIOR NAV / HEADER CON FLEXBOX (En una sola línea) */}
             <div className="flex flex-wrap items-center justify-between gap-3 p-4 bg-gray-50 border rounded shadow-sm w-full"></div>
+
+            {/* 14. DESPLEGABLE / SELECT (Para comparadores o filtros) */}
+            <select className="border border-gray-300 rounded px-3 py-1.5 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Seleccione una opción...</option>
+            </select>
+
+            {/* 15. LISTA DE ELEMENTOS / PODERES (ul / li) */}
+            <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+            </ul>
+
+            {/* 16. ETIQUETA / BADGE / PILL (Para Marvel, DC, categorías o estados) */}
+            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full w-fit">
+                Categoría / Badge
+            </span>
+
+            {/* 17. TABLA HTML LIMPIA (Para listas tabulares o rankings) */}
+            <table className="w-full text-sm text-left border border-gray-200 rounded-lg overflow-hidden">
+                <thead className="bg-gray-100 text-gray-700 uppercase text-xs border-b">
+                    <tr>
+                        <th className="px-4 py-2">Columna 1</th>
+                        <th className="px-4 py-2">Columna 2</th>
+                    </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                    <tr className="hover:bg-gray-50">
+                        <td className="px-4 py-2">Dato 1</td>
+                        <td className="px-4 py-2">Dato 2</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {/* 18. CARTEL DE ALERTA / GANADOR / MENSAJE */}
+            <div className="bg-green-100 border border-green-400 text-green-800 px-4 py-3 rounded text-center font-bold my-4">
+                🏆 ¡Ganador / Resultado Exitoso!
+            </div>
+
+            {/* 19. LAYOUT DE COMPARADOR / BATALLA (Lado a lado con VS) */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 my-6">
+                {/* Tarjeta 1 */}
+                <div className="border p-4 rounded shadow bg-white w-64 text-center">Héroe 1</div>
+                <span className="text-2xl font-extrabold text-red-600">VS</span>
+                {/* Tarjeta 2 */}
+                <div className="border p-4 rounded shadow bg-white w-64 text-center">Héroe 2</div>
+            </div>
         </div>
     );
 }
