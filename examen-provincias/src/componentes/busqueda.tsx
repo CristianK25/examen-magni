@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useContexto } from "../contexto/provincia_context"
 
 function Busqueda() {
-    const { elementos, filtrarPorSuperficie } = useContexto();
+    const { provincias, filtrarPorSuperficie } = useContexto();
     const [textoBusqueda, setTextoBusqueda] = useState("");
 
 

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import ProvinciasArgentinas from '../componentes/provincias_argentinas';
 import Busqueda from '../componentes/busqueda';
 
-export default function PaginaBase() {
-    const { elementos } = useContexto();
+export default function PaginaListaProvincias() {
+    const { provincias } = useContexto();
     const navigate = useNavigate();
 
     return (

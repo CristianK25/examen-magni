@@ -1,7 +1,0 @@
-# Esta carpeta es para almacenar las imágenes y el JSON que entregue el profesor en el examen.
-# Estructura:
-# public/
-#   ├── datos.json
-#   └── assets/
-#         └── img/
-#              └── (imágenes del examen)

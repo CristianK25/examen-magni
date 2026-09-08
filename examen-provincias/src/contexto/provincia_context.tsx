@@ -3,7 +3,7 @@ import type Modelo from '../modelo/Provincia';
 
 // 1. Interfaz de lo que va a proveer el contexto
 export interface ContextoType {
-    elementos: Modelo[];
+    provincias: Modelo[];
     promedioPoblacion: number;
     promedioSuperficie: number;
     filtrarPorSuperficie: (superficie: number) => void;
@@ -15,7 +15,7 @@ export const Contexto = createContext<ContextoType | undefined>(undefined);
 // 3. Proveedor del contexto
 export function Proveedor({ children }: { children: ReactNode }) {
     const [elementosPrincipales, setElementosPrincipales] = useState<Modelo[]>([]);
-    const [elementos, setElementos] = useState<Modelo[]>([]);
+    const [provincias, setProvincias] = useState<Modelo[]>([]);
 
     const URL_DATOS = '/lista_provincias.json';
     useEffect(() => {
@@ -23,7 +23,7 @@ export function Proveedor({ children }: { children: ReactNode }) {
             .then((respuesta) => respuesta.json())
             .then((datos) => {
                 setElementosPrincipales(datos);
-                setElementos([...datos]);
+                setProvincias([...datos]);
             })
             .catch((error) => console.error("Error al cargar:", error));
     }, []);
@@ -57,11 +57,11 @@ export function Proveedor({ children }: { children: ReactNode }) {
                 listaFiltrada.push(p)
             }
         }
-        setElementos(listaFiltrada)
+        setProvincias(listaFiltrada)
     }
 
     return (
-        <Contexto.Provider value={{ elementos, promedioPoblacion, promedioSuperficie, filtrarPorSuperficie }}>
+        <Contexto.Provider value={{ provincias, promedioPoblacion, promedioSuperficie, filtrarPorSuperficie }}>
             {children}
         </Contexto.Provider>
     );
