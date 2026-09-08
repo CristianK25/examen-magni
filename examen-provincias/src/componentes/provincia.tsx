@@ -17,7 +17,6 @@ function Provincia({ provincia }: ProvinciaProps) {
                 alt={provincia.provincia}
                 className="w-32 h-20 object-cover mb-2 border rounded"
             />
-
             <p className="text-gray-600 text-sm mb-3">Capital: {provincia.capital}</p>
 
             <button
