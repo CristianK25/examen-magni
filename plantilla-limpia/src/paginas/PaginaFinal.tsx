@@ -1,5 +1,3 @@
-// @ts-nocheck
-/* eslint-disable */
 import { useContexto } from '../contexto/context';
 import { useNavigate } from 'react-router-dom';
 

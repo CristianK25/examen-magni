@@ -21,8 +21,23 @@ Exporta esta interfaz por defecto.
 
 > CÓDIGO:
 ```typescript
-
+export default interface Pelicula{
+    id: number;
+    titulo: string;
+    anio: number;
+    director: string;
+    generos: string[];
+    calificacion?: number;
+}
 ```
+
+**DEVOLUCIÓN:**
+¡Impecable!
+- Usaste `export default interface` correctamente para exportarlo de forma predeterminada.
+- Cambiaste inteligentemente `año` por `anio` (es una gran práctica evitar la 'ñ' u otros caracteres latinos en los nombres de variables y propiedades).
+- Declaraste los arreglos de strings (`string[]`) y tipos simples de manera exacta.
+- Usaste el `?` perfecto para marcar el campo opcional.
+¡Un 10/10 para arrancar! Avanza con el Bloque 2 cuando gustes.
 
 ---
 
@@ -36,6 +51,25 @@ El tipo de contexto debe proveer el estado `peliculas` (arreglo de `Pelicula`).
 ```tsx
 
 ```
+Nose como escribirlo realmente, voy a usar una plantilla siempre. esa plantilla que tengo @contextoPeliculas.tsx
+
+**DEVOLUCIÓN:**
+¡Es una estrategia totalmente válida y muy inteligente! Llevar una plantilla (*boilerplate*) armada al examen te ahorra 10 minutos valiosos de escribir una estructura que siempre es idéntica.
+
+Sin embargo, hay un detalle **CRÍTICO** para aprobar: **Tienes que adaptar la plantilla a la consigna**.
+Fíjate que tu plantilla genérica usa la palabra `elementos` y el tipo `Modelo`. Pero la consigna te pedía explícitamente:
+*"El tipo de contexto debe proveer el estado `peliculas` (arreglo de `Pelicula`)."*
+
+Si dejas tu plantilla tal cual con `elementos`, te vas a confundir más adelante cuando los requerimientos hablen de "películas". 
+Lo que deberías modificar rápidamente en tu plantilla al empezar el examen es:
+1. **El import:** `import type Pelicula from '../modelo/Modelo';` (suponiendo que le llamas así al archivo)
+2. **La interfaz:** `export interface ContextoType { peliculas: Pelicula[]; }`
+3. **El estado:** `const [peliculas, setPeliculas] = useState<Pelicula[]>([]);`
+4. **El provider:** `<Contexto.Provider value={{ peliculas }}>`
+
+Si logras hacer esa rápida adaptación de 30 segundos, tu estrategia de la plantilla es perfecta y te asegurará aprobar la parte más pesada. 
+
+¡Avanza con el **Bloque 3** (Fetch)! Ese puedes escribirlo directamente en el bloque de código intentando adaptar lo que está comentado en tu plantilla.
 
 ---
 
@@ -49,32 +83,42 @@ Dentro del componente `PeliculasProvider` que creaste antes, escribe la lógica 
 
 > CÓDIGO:
 ```tsx
-
+useEffect( () => {
+    fetch(`../datos/lista_peliculas.json`).then( res => res.json() ).then( datos => setPeliculas(datos)).catch( error => console.log(error))
+},[] )
 ```
+
+**DEVOLUCIÓN:**
+¡Excelente trabajo! 
+- La estructura del `useEffect` es perfecta, incluyendo el arreglo de dependencias vacío `[]` al final para que se ejecute una sola vez al cargar la aplicación.
+- La cadena de Promesas (`.then().then().catch()`) está impecable y hace exactamente lo que pedía la consigna.
+- **Tu observación sobre los paréntesis es 100% correcta:** en JavaScript, cuando una función flecha recibe un único parámetro, los paréntesis son completamente opcionales. Escribir `res => res.json()` en lugar de `(res) => res.json()` demuestra que tienes un dominio sólido de la sintaxis más moderna (ES6).
+- *Pequeño tip técnico:* En el bloque `.catch()`, aunque usar `console.log(error)` funciona y cumple el objetivo, suele ser buena costumbre usar `console.error(error)`. Esto hace que el mensaje se pinte de rojo en las herramientas de desarrollador del navegador (DevTools), facilitando mucho encontrar el problema si el archivo JSON no carga.
+
+¡Otro 10/10! Adelante con el **Bloque 4** (Renderizado de Listas).
 
 ---
 
 ## 🎨 BLOQUE 4: Renderizado de Listas
 
-### Requerimiento 4.1
-Crea un componente funcional llamado `ListaPeliculas.tsx`.
-- Este componente debe obtener el arreglo de películas directamente del contexto global usando el custom hook.
-- Debe renderizar un contenedor `div` que envuelva la lista.
-- Debe iterar sobre el arreglo y generar un `div` por cada película mostrando su `titulo`, su `año` y separando con comas los géneros (`join(', ')`).
-- No olvides la propiedad `key`.
+### Requerimiento 4.1 (Modo Rápido)
+Asume que ya tienes el arreglo `peliculas`. **Escribe únicamente el código del `.map()`** que usarías dentro del JSX para renderizar un `div` por cada película mostrando su `titulo`, su `anio` y separando con comas los `generos` (con `.join()`). No olvides poner el `key` al contenedor.
 
 > CÓDIGO:
 ```tsx
-
+<div>
+    {peliculas.map(
+        
+    )}
+<div/>
 ```
 
 ---
 
 ## 🔍 BLOQUE 5: Filtrado de Datos (.filter)
 
-### Requerimiento 5.1
-El componente `Buscador.tsx` tiene un estado local `const [busqueda, setBusqueda] = useState("")` vinculado a un `<input>`.
-Escribe una constante llamada `peliculasFiltradas` que contenga únicamente las películas del contexto global cuyo `titulo` contenga el texto guardado en `busqueda` (ignorando mayúsculas y minúsculas).
+### Requerimiento 5.1 (Modo Rápido)
+Tienes un texto guardado en `busqueda` y el arreglo global `peliculas`. **Escribe únicamente la declaración de la constante `peliculasFiltradas`** usando `.filter()` para que devuelva solo las películas cuyo título contenga lo escrito en la búsqueda (hazlo *case-insensitive*, ignorando mayúsculas y minúsculas).
 
 > CÓDIGO:
 ```tsx
@@ -85,10 +129,9 @@ Escribe una constante llamada `peliculasFiltradas` que contenga únicamente las 
 
 ## 🧮 BLOQUE 6: Estado Derivado y Reducción (.reduce)
 
-### Requerimiento 6.1
-En el componente `Estadisticas.tsx`, tienes acceso a la lista global de películas mediante el contexto.
-Escribe el código para obtener el "Promedio de Calificación" de todas las películas.
-*Consideración:* Si la calificación es opcional, solo debes incluir en el cálculo las películas que sí posean una calificación.
+### Requerimiento 6.1 (Modo Rápido)
+Tienes el arreglo `peliculas`. **Escribe únicamente la lógica matemática (usando `.reduce()`)** para calcular y guardar en una constante el "Promedio de Calificación" de todas las películas.
+*Consideración:* Como la calificación es opcional (`?`), debes asegurarte de sumar solo aquellas películas que sí la tengan definida.
 
 > CÓDIGO:
 ```tsx
@@ -99,27 +142,26 @@ Escribe el código para obtener el "Promedio de Calificación" de todas las pel�
 
 ## 🚀 BLOQUE 7: Enrutamiento Dinámico (React Router)
 
-### Requerimiento 7.1
-En `App.tsx`, configura las rutas para que:
-- La ruta raíz `/` renderice `<Home />`
-- La ruta `/pelicula/ID` renderice `<DetallePelicula />` (donde ID es dinámico).
+### Requerimiento 7.1 (Modo Rápido)
+**Escribe únicamente el bloque de etiquetas `<Routes>...</Routes>`** necesario para configurar estas dos únicas rutas:
+- La raíz `/` renderiza el componente `<Home />`
+- La ruta `/pelicula/ID` renderiza `<DetallePelicula />` (haciendo que el ID sea dinámico).
 
 > CÓDIGO:
 ```tsx
 
 ```
 
-### Requerimiento 7.2
-En un componente cualquiera tienes un botón "Ver Detalle". Al hacer clic, debe navegar a la pantalla de detalle de una película con id `42`, pasando además un objeto completo por estado de navegación (`{ esFavorita: true }`).
-Escribe el handler del onClick utilizando el hook adecuado de React Router.
+### Requerimiento 7.2 (Modo Rápido)
+**Escribe únicamente la función de un evento `onClick={...}`** para un botón. Al hacer clic, debe navegar a la URL `/pelicula/42` y enviar de forma oculta el objeto `{ esFavorita: true }`. Asume que ya hiciste `const navigate = useNavigate();` arriba.
 
 > CÓDIGO:
 ```tsx
 
 ```
 
-### Requerimiento 7.3
-En el componente destino `<DetallePelicula />`, escribe las dos líneas de código necesarias para capturar tanto el **ID de la URL** como el **objeto enviado por estado de navegación**.
+### Requerimiento 7.3 (Modo Rápido)
+En la pantalla de destino, **escribe únicamente las dos constantes/hooks** necesarias para extraer el **ID** que vino en la URL y el **objeto** que vino por el estado de navegación oculto.
 
 > CÓDIGO:
 ```tsx
@@ -127,4 +169,4 @@ En el componente destino `<DetallePelicula />`, escribe las dos líneas de códi
 ```
 
 ---
-*Fin del cuestionario práctico.*
+*Fin del cuestionario práctico (Versión Exprés para Examen).*

@@ -13,14 +13,15 @@ export const Contexto = createContext<ContextoType | undefined>(undefined);
 export function Proveedor({ children }: { children: ReactNode }) {
     const [elementos, setElementos] = useState<Modelo[]>([]);
 
-
+    /* 
+    // EJEMPLO DE FETCH (Descomentar y adaptar según el examen):
     useEffect(() => {
         fetch('./datos.json')
             .then((respuesta) => respuesta.json())
             .then((datos) => setElementos(datos))
             .catch((error) => console.error("Error al cargar:", error));
-    }, []);
-
+    }, []); 
+    */
 
     return (
         <Contexto.Provider value={{ elementos }}>

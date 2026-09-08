@@ -1,5 +1,3 @@
-// @ts-nocheck
-/* eslint-disable */
 import { Routes, Route } from 'react-router-dom'
 import PaginaBase from './paginas/PaginaBase'
 import PaginaFinal from './paginas/PaginaFinal'
